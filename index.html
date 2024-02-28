@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="styleCodepen1.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="media/iconpage.png">
+  <link rel="shortcut icon" href="./media/logotip.png">
   <script defer src="Codepen1.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -15,27 +15,46 @@
   <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css'>
+  <link rel="stylesheet" href="./bottstrap/pen-export-EEyaYj/dist/style.css">
   <link rel="stylesheet" href="./style.css">
-
-  <title>Enfermeria Web</title>
+  <script defer src="./bottstrap/pen-export-EEyaYj/dist/script.js"></script>
+  <link rel="stylesheet" href="./finalStyle.css">
+ 
+  <title>Estancia Junts</title>
 </head>
 <!-- md row col left lg xl li -->
 
 <body>
+  <!-- Call to action -->
+  <header>
+    <div class="content">
+      <hgroup style="padding: 0px;">
+        <!-- <h1>LOGO</h1> -->
+        <img src="./media/logotip.png" style="height: 300px; margin: 0px; padding: 0px">
+      </hgroup>
+    </div>
+    <div class="overlay"></div>
+  </header>
+  <section>
+
+  </section>
   <!-- <div class="container-fluid"> -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" style="background-color: transparent;" ; href="#">Brand</a>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="margin-top: -40px"
+    style="position: sticky;">
+    <div class="container-fluid" style="position: sticky;">
+      <!-- <a class="navbar-brand" style="background-color: transparent;" ; href="#">Brand</a> -->
+      <a href="index.html" style="background-color: transparent;"><img src="./media/logotip.png" alt=""
+          style="height: 70px;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <ul class="navbar-nav mb-2 mb-lg-0" style="display: flex;">
         <li class="nav-item offset-lg-5">
-          <a href="#" style="background-color: transparent;"><i class="bi bi-camera-fill h1"></i></a>
+          <a href="GALERIA.html" style="background-color: transparent;"><i class="bi bi-camera-fill h1"></i></a>
         </li>
         <li class="nav-item offset-lg-5">
-          <a href="#" style="background-color: transparent;"><i class="bi bi-envelope-fill h1"></i></a>
+          <a href="CONTACTE.html" style="background-color: transparent;"><i class="bi bi-envelope-fill h1"></i></a>
         </li>
       </ul>
       <div class="collapse navbar-collapse offset-lg-1" id="navbarContent">
@@ -44,32 +63,32 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               style="background-color: transparent;" aria-expanded="false"> Gent Gran </a>
             <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Atenció Domiciliària</a></li>
-              <li><a class="dropdown-item" href="#">Casal d'avis</a></li>
+              <li><a class="dropdown-item" href="casalAvis.html">Relació social</a></li>
+              <li><a class="dropdown-item" href="ActivitatsFisicas.html">Activitats Fisiques/Memòria</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               style="background-color: transparent;" aria-expanded="false"> Salut Mental </a>
             <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Club Social</a></li>
-              <li><a class="dropdown-item" href="#">Centre Reahabilitació</a></li>
+              <li><a class="dropdown-item" href="CompanyiaIActivitats.html">Companyia i activitats</a></li>
+              <li><a class="dropdown-item" href="RehabilitacióPsicosocial.html">Reahabilitació psicosocial</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               style="background-color: transparent;" aria-expanded="false"> Difersitat Fisica i Sensorial </a>
             <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Centre Xerrades</a></li>
-              <li><a class="dropdown-item" href="#">Centre "5 sentits"</a></li>
+              <li><a class="dropdown-item" href="IntegracióSocial.html">Integració Social</a></li>
+              <li><a class="dropdown-item" href="IntegracióALaVidaQuotidiana.html">Integració vida cuotidiana</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               style="background-color: transparent;" aria-expanded="false"> Diversitat Intel·lectual </a>
             <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Formació Ocupacional</a></li>
-              <li><a class="dropdown-item" href="#">Logopedia</a></li>
+              <li><a class="dropdown-item" href="FormacióOcupacional.html">Formació Ocupacional</a></li>
+              <li><a class="dropdown-item" href="Logopedia.html">Logopedia</a></li>
             </ul>
           </li>
         </ul>
@@ -89,7 +108,7 @@
               <div class="post-body">
                 <img class="post-avatar" src="./media/abuelo.jpg" alt="avatar" />
                 <div class="post-detail">
-                  <h2 class="post-name">Homemade Ice Cream</h2>
+                  <h2 class="post-name">Carlos</h2>
                   <p class="post-author">Evelyn Taylor</p>
                 </div>
 
@@ -132,7 +151,7 @@
               <div class="post-body">
                 <img class="post-avatar" src="./media/abuelo.jpg" alt="avatar" />
                 <div class="post-detail">
-                  <h2 class="post-name">Pancake</h2>
+                  <h2 class="post-name">Pedro</h2>
                   <p class="post-author">Ethan Wilson</p>
                 </div>
 
@@ -176,7 +195,7 @@
                 <img class="post-avatar" src="./media/abuelo.jpg" alt="avatar" />
                 <div class="post-detail">
                   <h2 class="post-name">Macaron</h2>
-                  <p class="post-author">Bella Smith</p>
+                  <p class="post-author">Mariano Rajoy</p>
                 </div>
 
                 <div class="post-actions">
@@ -219,7 +238,7 @@
                 <img class="post-avatar" src="./media/abuelo.jpg" alt="avatar" />
                 <div class="post-detail">
                   <h2 class="post-name">Cheesecake</h2>
-                  <p class="post-author">Mia Dixon</p>
+                  <p class="post-author">Mr beast</p>
                 </div>
 
                 <div class="post-actions">
@@ -262,7 +281,7 @@
                 <img class="post-avatar" src="./media/abuelo.jpg" alt="avatar" />
                 <div class="post-detail">
                   <h2 class="post-name">Donuts</h2>
-                  <p class="post-author">Olivia Martinez</p>
+                  <p class="post-author">Marcos Raul</p>
                 </div>
 
                 <div class="post-actions">
@@ -305,7 +324,7 @@
                 <img class="post-avatar" src="./media/abuelo.jpg" alt="avatar" />
                 <div class="post-detail">
                   <h2 class="post-name">Rolo Cheesecake</h2>
-                  <p class="post-author">Benjamin Clark</p>
+                  <p class="post-author">Joel Roca</p>
                 </div>
 
                 <div class="post-actions">
@@ -413,7 +432,7 @@
               <div class="col-md-7 bg-white">
                 <div class="p-4">
                   <h6 class="mb-3">Manel Daza</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                  <p>Distribució de web, disseny, secions principals y subseccions -pensaba que el arbol era hierba 'Ferran Aviones'.</p>
                   <div class="col-md-12 text-center">
                     <ul class="social-network social-circle">
                       <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
@@ -540,6 +559,77 @@
         </div> <!-- column  -->
       </div>
     </div>
+    <div class="container">
+      <div class="row justify-content-center mb-3">
+        <div class="col-md-7 text-center">
+          <h1 class="mb-3">Que Fem?</h1>
+          <p class="lead">La nostra empresa anomenada “ESTANCIA JUNTS” tracta d’un centre de dia especialitzat amb els següents col·lectius.</p>
+        </div>
+      </div>
+      <div class="row">
+        <!-- column  -->
+        <div class="col-lg-3">
+          <div class="card border-0 mb-4">
+            <!-- Row -->
+            <div class=" no-gutters card-shadow align-middle align-self-center">
+              <div class="col align-middle align-self-center" style="background-color:yellow; height: 150px">
+                <h1 class="text-center pt-3">ESTANCIA GROGA</h1>
+              </div>
+              <div class="bg-white">
+                <div class="p-4">
+                  <p>Associem el color groc al col·lectiu de Gent Gran ja que es un color càlid, molt acollidor i que facilita la relació social (trastorns depressius)</p>
+                </div>
+              </div>
+            </div> <!-- Row -->
+          </div>
+        </div> <!-- column  -->
+        <div class="col-lg-3">
+          <div class="card border-0 mb-4">
+            <!-- Row -->
+            <div class=" no-gutters card-shadow align-middle align-self-center">
+              <div class="col align-middle align-self-center" style="background-color:lightblue; height: 150px">
+                <h1 class="text-center pt-3">ESTANCIA BLAVA</h1>
+              </div>
+              <div class="bg-white">
+                <div class="p-4">
+                  <p>Associem el color blau al col·lectiu de Salut Mental perquè es un color fred i molt tranquil.</p>
+                </div>
+              </div>
+            </div> <!-- Row -->
+          </div>
+        </div> <!-- column  -->
+        <div class="col-lg-3">
+          <div class="card border-0 mb-4">
+            <!-- Row -->
+            <div class=" no-gutters card-shadow align-middle align-self-center">
+              <div class="col align-middle align-self-center" style="background-color:gold; height: 150px">
+                <h1 class="text-center pt-3">ESTANCIA DAURADA</h1>
+              </div>
+              <div class="bg-white">
+                <div class="p-4">
+                  <p>Associem el color daurat al col·lectiu de Diversitat Intel·lectual perquè es un color intens i estimulant per ells.</p>
+                </div>
+              </div>
+            </div> <!-- Row -->
+          </div>
+        </div> <!-- column  -->
+        <div class="col-lg-3">
+          <div class="card border-0 mb-4">
+            <!-- Row -->
+            <div class=" no-gutters card-shadow align-middle align-self-center">
+              <div class="col align-middle align-self-center" style="background-color:lightgreen; height: 150px">
+                <h1 class="text-center pt-3">ESTANCIA VERDA</h1>
+              </div>
+              <div class="bg-white">
+                <div class="p-4">
+                  <p>Associem el color verd al col·lectiu de Diversitat Física i Sensorial perquè es un color tranquil i atractiu.</p>
+                </div>
+              </div>
+            </div> <!-- Row -->
+          </div>
+        </div> <!-- column  -->
+      </div>
+    </div>
   </div>
 
   <!-- heig -->
@@ -548,12 +638,12 @@
       <div class="col-lg-6 my-4">
         <h1>A on ens Trobem</h1>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115681.29592731265!2d-77.47713270775661!3d25.0326996781907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x892f7c99b981dbc9%3A0x2aef01d3485e50d2!2sNassau%2C%20Bahamy!5e0!3m2!1spl!2spl!4v1624445118063!5m2!1spl!2spl"
+          src="https://www.google.com/maps/place/Jaume+Viladoms,+Centro+de+Estudios+Profesionales/@41.5438633,2.0956572,17z/data=!3m1!4b1!4m6!3m5!1s0x12a494f7a6b86651:0xe9a74531a2b7ca1!8m2!3d41.5438633!4d2.0982321!16s%2Fg%2F1tp68kns?entry=ttu"
           class="w-100" height="400" allowfullscreen="" loading="lazy"></iframe>
       </div>
       <div class="col-lg-6 my-4 d-flex align-items-center">
         <div>
-          <h6>This map is embedded in a 6 column layout</h6>
+          <h6>Mapa de la nostre localitat per seber on trobar-nos</h6>
           <p>Try to resize your browser window - you will see that it starts to take up 12 columns on
             screens smaller than 992px.</p>
           <p>This useful feature helps to make your embedded map responsive (<strong>mobile
@@ -570,80 +660,63 @@
   <!-- FOOTER -->
   <footer class="bg-body-tertiary text-center">
     <!-- Grid container -->
-    <div class="container p-4 pb-0">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a
-        data-mdb-ripple-init
-          class="btn text-white btn-floating m-1"
-          style="background-color: #3b5998;"
-          href="#!"
-          role="button"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-  
-        <!-- Twitter -->
-        <a
-          data-mdb-ripple-init
-          class="btn text-white btn-floating m-1"
-          style="background-color: #55acee;"
-          href="#!"
-          role="button"
-          ><i class="fab fa-twitter"></i
-        ></a>
-  
-        <!-- Google -->
-        <a
-          data-mdb-ripple-init
-          class="btn text-white btn-floating m-1"
-          style="background-color: #dd4b39;"
-          href="#!"
-          role="button"
-          ><i class="fab fa-google"></i
-        ></a>
-  
-        <!-- Instagram -->
-        <a
-          data-mdb-ripple-init
-          class="btn text-white btn-floating m-1"
-          style="background-color: #ac2bac;"
-          href="#!"
-          role="button"
-          ><i class="fab fa-instagram"></i
-        ></a>
-  
-        <!-- Linkedin -->
-        <a
-          data-mdb-ripple-init
-          class="btn text-white btn-floating m-1"
-          style="background-color: #0082ca;"
-          href="#!"
-          role="button"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
-        <!-- Github -->
-        <a
-          data-mdb-ripple-init
-          class="btn text-white btn-floating m-1"
-          style="background-color: #333333;"
-          href="#!"
-          role="button"
-          ><i class="fab fa-github"></i
-        ></a>
-      </section>
-      <!-- Section: Social media -->
-    </div>
+
     <!-- Grid container -->
-  
+
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2020 Copyright:
-      <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    <div class="">
+      <div class="mt-5">
+
+        <footer class="bg-dark text-center text-white">
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+              <!-- Facebook -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-facebook-f"></i></a>
+
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-twitter"></i></a>
+
+              <!-- Google -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-google"></i></a>
+
+              <!-- Instagram -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-instagram"></i></a>
+
+              <!-- Linkedin -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-linkedin-in"></i></a>
+
+              <!-- Github -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                  class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+          </div>
+          <!-- Grid container -->
+
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Copyright: Manel Daza, Martí Gubern
+          </div>
+          <!-- Copyright -->
+        </footer>
+
+      </div>
     </div>
     <!-- Copyright -->
   </footer>
 
   <script src='https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js'></script>
   <script src="./script.js"></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+
+  <script src="js/index.js"></script>
 </body>

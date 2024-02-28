@@ -1,0 +1,259 @@
+/* body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 18px;
+  color: #222;
+  padding: 1em 2em;
+  background-color: #FFF3DE;
+} */
+.timetable {
+  padding: 0 1em;
+}
+@media only screen and (min-width: 992px) {
+  .timetable {
+    padding: 0;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  .timetable > div {
+    display: table-row;
+  }
+  .timetable > div > div {
+    display: table-cell;
+  }
+}
+.tt-column {
+  margin: 1em;
+}
+.tt-column header {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 1.5em;
+  line-height: 100%;
+  padding: 0.5em 0;
+  text-align: center;
+}
+.tt-column header .tt-header-title {
+  font-weight: bold;
+}
+.tt-column header .tt-header-info {
+  font-size: 0.75em;
+  line-height: 125%;
+  color: #999;
+}
+@media only screen and (min-width: 992px) {
+  .tt-column header {
+    font-size: 1.25em;
+    line-height: 100%;
+    padding-left: 0;
+  }
+}
+.tt-column .tt-column-body {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.tt-column .tt-column-body > div {
+  display: table-row;
+}
+.tt-column .tt-column-body > div > div {
+  display: table-cell;
+}
+.tt-column .tt-column-body > div > div {
+  border: 1px solid #999;
+  height: 7em;
+  background-color: #FFF;
+}
+@media only screen and (max-width: 991px) {
+  .tt-column .tt-column-body > div > div {
+    height: 6em;
+  }
+}
+.tt-column .tt-column-body > div > div.marked .tt-event {
+  background-color: #e7eedd;
+}
+.tt-column .tt-column-body > div > div.marked .tt-event .tt-event-time {
+  background-color: #c3d4aa;
+  border-right: 1px solid #c3d4aa;
+  position: relative;
+}
+.tt-column .tt-column-body > div > div.marked .tt-event .tt-event-time:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 0.75em solid transparent;
+  border-bottom: 0.75em solid transparent;
+  border-left: 0.5em solid #c3d4aa;
+  margin-top: -0.75em;
+  top: 50%;
+  left: 100%;
+}
+.tt-column .tt-column-body > div > div.marked .tt-event .tt-event-info .tt-event-title {
+  font-weight: bold;
+}
+@media only screen and (min-width: 992px) {
+  .tt-column .tt-column-body > div > div.marked .tt-event .tt-event-info .tt-event-title {
+    font-weight: normal;
+  }
+}
+.tt-column .tt-column-body > div > div.marked .tt-event .tt-event-info .tt-event-description {
+  color: #666666;
+}
+@media only screen and (min-width: 992px) {
+  .tt-column .tt-column-body > div > div.marked .tt-event .tt-event-info .tt-event-description {
+    color: #999;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .tt-column .tt-column-body > div > div.marked .tt-event {
+    background-color: transparent;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .tt-column .tt-column-body > div > div.marked {
+    outline: 0.25em solid #C43;
+    border: 1px solid #C43;
+  }
+}
+.tt-column .tt-column-body .tt-event {
+  height: 100%;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.tt-column .tt-column-body .tt-event > div {
+  display: table-row;
+}
+.tt-column .tt-column-body .tt-event > div > div {
+  display: table-cell;
+}
+.tt-column .tt-column-body .tt-event > div > div {
+  vertical-align: middle;
+}
+.tt-column .tt-column-body .tt-event > div > div.tt-event-icon {
+  display: none;
+}
+@media only screen and (min-width: 480px) and (max-width: 991px) {
+  .tt-column .tt-column-body .tt-event > div > div.tt-event-icon {
+    display: table-cell;
+  }
+}
+.tt-column .tt-column-body .tt-event .tt-event-time,
+.tt-column .tt-column-body .tt-event .tt-event-icon {
+  width: 4em;
+}
+@media only screen and (min-width: 768px) {
+  .tt-column .tt-column-body .tt-event .tt-event-time,
+  .tt-column .tt-column-body .tt-event .tt-event-icon {
+    width: 5em;
+  }
+}
+.tt-column .tt-column-body .tt-event .tt-event-time {
+  color: #000;
+  background-color: #EEE;
+  background-image: repeating-linear-gradient(135deg, transparent, transparent 5px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.5) 10px);
+  border-right: 1px dotted #999;
+}
+@media only screen and (min-width: 992px) {
+  .tt-column .tt-column-body .tt-event .tt-event-time {
+    display: none;
+  }
+}
+.tt-column.tt-column-head {
+  display: none;
+  width: 4em;
+}
+.tt-column.tt-column-head .tt-column-body > div > div {
+  vertical-align: middle;
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+.tt-column.tt-column-head .tt-column-body > div > div .tt-event-time {
+  color: #999;
+  padding-right: 1em;
+}
+.tt-column.tt-column-head .tt-column-body > div > div .tt-event-time span {
+  font-size: 1em;
+  line-height: 150%;
+}
+@media only screen and (min-width: 992px) {
+  .tt-column.tt-column-head {
+    display: table-cell;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .tt-column {
+    margin: 0;
+    display: table-cell;
+  }
+}
+.tt-event-time {
+  padding-right: 1em;
+  text-align: right;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+.tt-event-time span {
+  display: block;
+  font-size: 1.5em;
+  line-height: 125%;
+}
+@media only screen and (min-width: 768px) {
+  .tt-event-time {
+    padding-right: 1.5em;
+  }
+}
+.tt-event-info {
+  padding: 0 1em;
+}
+.tt-event-info .tt-event-title,
+.tt-event-info .tt-event-description {
+  display: block;
+}
+@media only screen and (min-width: 992px) {
+  .tt-event-info .tt-event-title,
+  .tt-event-info .tt-event-description {
+    text-align: center;
+  }
+}
+.tt-event-info .tt-event-title {
+  font-size: 1.125em;
+  line-height: 120%;
+  margin-bottom: 0.25em;
+  max-height: 3.6em;
+  overflow: hidden;
+}
+.tt-event-info .tt-event-description {
+  color: #999;
+  line-height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media only screen and (min-width: 992px) {
+  .tt-event-info .tt-event-description {
+    max-height: 2em;
+    white-space: normal;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .tt-event-info {
+    padding: 0 0.5em;
+  }
+}
+.tt-event-icon {
+  text-align: center;
+}
+.tt-event-icon [class^="icon-"],
+.tt-event-icon [class*=" icon-"] {
+  font-size: 1.75em;
+}
+.tt-event-icon span {
+  display: block;
+  margin-top: 0.25em;
+  font-family: "PT Sans Narrow", sans-serif;
+}

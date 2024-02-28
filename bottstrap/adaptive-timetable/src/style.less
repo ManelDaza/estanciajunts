@@ -1,0 +1,385 @@
+
+// --- variables ---
+
+@phablet-min: 480px;
+@tablet-min:  768px;
+@desktop-min: 992px;
+@large-min:   1200px;
+
+@phone-max:   (@phablet-min - 1px); // 479px
+@phablet-max: (@tablet-min  - 1px); // 767px
+@tablet-max:  (@desktop-min - 1px); // 991px
+@desktop-max: (@large-min   - 1px); // 1199px
+
+@phone:   ~"only screen and (max-width: @{phone-max})";
+@phablet: ~"only screen and (min-width: @{phablet-min}) and (max-width: @{phablet-max})";
+@tablet:  ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
+@desktop: ~"only screen and (min-width: @{desktop-min}) and (max-width: @{desktop-max})";
+@large:   ~"only screen and (min-width: @{large-min})";
+
+@phone-gt:   ~"only screen and (min-width: @{phablet-min})";
+@phablet-gt: ~"only screen and (min-width: @{tablet-min})";
+@tablet-gt:  ~"only screen and (min-width: @{desktop-min})";
+
+@tablet-lt:  ~"only screen and (max-width: @{phablet-max})";
+@desktop-lt: ~"only screen and (max-width: @{tablet-max})";
+@large-lt:   ~"only screen and (max-width: @{desktop-max})";
+
+@phablet-tablet:  ~"only screen and (min-width: @{phablet-min}) and (max-width: @{tablet-max})";
+@phablet-desktop: ~"only screen and (min-width: @{phablet-min}) and (max-width: @{desktop-max})";
+@tablet-desktop:  ~"only screen and (min-width: @{tablet-min}) and (max-width: @{desktop-max})";
+
+@colorMuted:  #999;
+@colorActive: #8A5;
+@colorMarked: #C43;
+
+@timetableBorderColor: #999;
+
+@sansFontFamily: "PT Sans", sans-serif;
+@narrowFontFamily: "PT Sans Narrow", sans-serif;
+
+// --- mixins ---
+
+.text-overflow ()
+{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.display-table ()
+{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    > div
+    {
+        display: table-row;
+
+        > div
+        {
+            display: table-cell;
+        }
+    }
+}
+
+
+// --- common ---
+
+body
+{
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 18px;
+    color: #222;
+    padding: 1em 2em;
+    background-color: #FFF3DE;
+}
+
+
+// --- timetable ---
+
+.timetable
+{
+    padding: 0 1em;
+
+    @media @tablet-gt
+    {
+        padding: 0;
+
+        .display-table();
+    }
+}
+
+.tt-column
+{
+    margin: 1em;
+
+    header
+    {
+        font-family: @narrowFontFamily;
+        font-size: 1.5em;
+        line-height: 100%;
+        padding: 0.5em 0;
+        text-align: center;
+
+        .tt-header-title
+        {
+            font-weight: bold;
+        }
+
+        .tt-header-info
+        {
+            font-size: 0.75em;
+            line-height: 125%;
+            color: @colorMuted;
+        }
+
+        @media @tablet-gt
+        {
+            font-size: 1.25em;
+            line-height: 100%;
+
+            padding-left: 0;
+        }
+    }
+
+    .tt-column-body
+    {
+        .display-table();
+
+        > div > div
+        {
+            border: 1px solid @timetableBorderColor;
+            height: 7em;
+            background-color: #FFF;
+          
+            @media @desktop-lt
+            {
+                height: 6em;
+            }
+
+            &.marked
+            {
+                .tt-event
+                {
+                    @color: lighten(@colorActive, 25%);
+                    @size: 0.75em;
+
+                    background-color: lighten(@color, 15%);
+
+                    .tt-event-time
+                    {
+                        background-color: @color;
+                        border-right: 1px solid @color;
+
+                        position: relative;
+
+                        &:after
+                        {
+                            position: absolute;
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            border-top: @size solid transparent;
+                            border-bottom: @size solid transparent;
+                            border-left: (@size * 2/3) solid @color;
+
+                            margin-top: (-@size);
+                            top: 50%;
+                            left: 100%;
+                        }
+                    }
+
+                    .tt-event-info
+                    {
+                        .tt-event-title
+                        {
+                            font-weight: bold;
+
+                            @media @tablet-gt
+                            {
+                                font-weight: normal;
+                            }
+                        }
+
+                        .tt-event-description
+                        {
+                            color: darken(@colorMuted, 20%);
+
+                            @media @tablet-gt
+                            {
+                                color: @colorMuted;
+                            }
+                        }
+                    }
+
+                    @media @tablet-gt
+                    {
+                        background-color: transparent;
+                    }
+                }
+
+                @media @tablet-gt
+                {
+                    outline: 0.25em solid @colorMarked;
+                    border: 1px solid @colorMarked;
+                }
+            }
+        }
+
+        .tt-event
+        {
+            height: 100%;
+          
+            .display-table();
+
+            > div
+            {
+                > div
+                {
+                    vertical-align: middle;
+
+                    &.tt-event-icon
+                    {
+                        display: none;
+
+                        @media @phablet-tablet
+                        {
+                            display: table-cell;
+                        }
+                    }
+                }
+            }
+
+            .tt-event-time,
+            .tt-event-icon
+            {
+                width: 4em;
+
+                @media @phablet-gt
+                {
+                    width: 5em;
+                }
+            }
+
+            .tt-event-time
+            {
+                color: #000;
+                background-color: #EEE;
+                background-image: repeating-linear-gradient(135deg, transparent, transparent 5px, rgba(255,255,255,.5) 5px, rgba(255,255,255,.5) 10px);
+                border-right: 1px dotted @timetableBorderColor;
+
+                @media @tablet-gt
+                {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.tt-column-head
+    {
+        display: none;
+        width: 4em;
+
+        .tt-column-body
+        {
+            > div
+            {
+                > div
+                {
+                    vertical-align: middle;
+                    border: 1px solid transparent;
+                    background-color: transparent;
+
+                    .tt-event-time
+                    {
+                        color: @colorMuted;
+                        padding-right: 1em;
+
+                        span
+                        {
+                            font-size: 1em;
+                            line-height: 150%;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media @tablet-gt
+        {
+            display: table-cell;
+        }
+    }
+
+    @media @tablet-gt
+    {
+        margin: 0;
+        display: table-cell;
+    }
+}
+
+.tt-event-time
+{
+    padding-right: 1em;
+    text-align: right;
+    font-family: @narrowFontFamily;
+
+    span
+    {
+        display: block;
+        font-size: 1.5em;
+        line-height: 125%;
+    }
+
+    @media @phablet-gt
+    {
+        padding-right: 1.5em;
+    }
+}
+
+.tt-event-info
+{
+    padding: 0 1em;
+
+    .tt-event-title,
+    .tt-event-description
+    {
+        display: block;
+
+        @media @tablet-gt
+        {
+            text-align: center;
+        }
+    }
+
+    .tt-event-title
+    {
+        font-size: 1.125em;
+        line-height: 120%;
+        margin-bottom: 0.25em;
+        max-height: 1.2em * 3;
+        overflow: hidden;
+    }
+
+    .tt-event-description
+    {
+        color: @colorMuted;
+        line-height: 100%;
+
+        .text-overflow();
+      
+        @media @tablet-gt
+        {
+            max-height: 2em;
+            white-space: normal;
+        }
+    }
+
+    @media @tablet-gt
+    {
+        padding: 0 0.5em;
+    }
+}
+
+.tt-event-icon
+{
+    text-align: center;
+
+    [class^="icon-"], [class*=" icon-"]
+    {
+        font-size: 1.75em;
+    }
+
+    span
+    {
+        display: block;
+        margin-top: 0.25em;
+        font-family: @narrowFontFamily;
+    }
+}
